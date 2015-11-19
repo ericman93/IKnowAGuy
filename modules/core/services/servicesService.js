@@ -6,8 +6,17 @@ angular.module('iKnowAGuyApp.core')
                 //TODO
             }
 
-            function getById(id) {
-                // TODO
+            function getById(serviceId) {
+                var deferred = $q.defer();
+
+                $http.get(Backand.getApiUrl() + '/1/objects/services/' + serviceId + '?deep=true')
+                    .then(function (data) {
+                        deferred.resolve(data.data);
+                    }, function (error) {
+                        deferred.reject();
+                    });
+
+                return deferred.promise;
             }
 
             function getByTagFilter(tags) {
