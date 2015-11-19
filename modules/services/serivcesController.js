@@ -8,6 +8,15 @@ angular.module('iKnowAGuyApp.services').controller("servicesController", ['$scop
                 });
         };
 
+        $scope.resetFilter = function () {
+            $scope.filter = {
+                bidTypes : {
+                    auction: undefined,
+                    buyNow: undefined
+                }
+            };
+        };
+
         function loadServices(){
             Services.getByTagFilter($stateParams.tags).then(function(services){
                 $scope.services = services;
@@ -16,6 +25,7 @@ angular.module('iKnowAGuyApp.services').controller("servicesController", ['$scop
             })
         }
 
+        $scope.resetFilter();
         loadServices();
     }
 ]);

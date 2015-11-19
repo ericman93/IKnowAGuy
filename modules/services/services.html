@@ -6,7 +6,7 @@
                 <md-button class="md-fab" aria-label=filter" ng-click="toggleFilter()"><i class="fa fa-filter"></i></md-button>
                 {{filtered.length}} results has found
             </md-subheader>
-            <service model="service" ng-repeat="service in filtered = (services | bidTypeFilter: filter.bidType)"></service>
+            <service model="service" ng-repeat="service in filtered = (services | bidTypeFilter: filter.bidTypes)"></service>
         </md-list>
 
         <div ng-show="filtered.length == 0">
@@ -15,7 +15,6 @@
     </div>
 
     <div ui-view></div>
-
 </md-content>
 
 <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
@@ -24,8 +23,13 @@
     </md-toolbar>
     <md-content layout-padding>
         <label>Bid Type</label>
-        <input type="number" ng-model="filter.bidType" />
 
-        <md-button class="md-raised" ng-click="filter = undefined">Reset</md-button>
+        <div flex="50" ng-repeat="(name, value) in filter.bidTypes">
+            <md-checkbox ng-model="filter.bidTypes[name]">
+                {{name}}
+            </md-checkbox>
+        </div>
+
+        <md-button class="md-raised" ng-click="resetFilter()">Reset</md-button>
     </md-content>
 </md-sidenav>
