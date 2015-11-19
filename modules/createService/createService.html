@@ -3,6 +3,13 @@
         <div class="md-dialog-content">
 
             <div>
+                <md-input-container>
+                    <label>Name</label>
+                    <input ng-model="service.name">
+                </md-input-container>
+            </div>
+
+            <div>
                 <md-input-container md-no-float="true">
                     <label>Description</label>
                     <input ng-model="service.description">
@@ -10,10 +17,15 @@
             </div>
 
             <div>
-                <md-input-container>
-                    <label>Name</label>
-                    <input ng-model="service.name">
-                </md-input-container>
+                <md-switch ng-model="service.enableAuction" aria-label="Switch 1" class="md-block">
+                    Auction
+                </md-switch>
+            </div>
+
+            <div>
+                <md-switch ng-model="service.enableBuyItNow" aria-label="Switch 1" class="md-block">
+                    Buy It Now
+                </md-switch>
             </div>
 
             <div>
