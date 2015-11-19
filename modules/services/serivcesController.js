@@ -1,3 +1,5 @@
-/**
- * Created by Eric on 19/11/2015.
- */
+angular.module('iKnowAGuyApp.services').controller("servicesController", ['$scope', '$stateParams',
+    function ($scope, $stateParams) {
+        console.log($stateParams.tags);
+    }
+]);
