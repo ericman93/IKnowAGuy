@@ -4,7 +4,7 @@
             <md-button class="md-fab" aria-label=filter" ng-click="toggleFilter()"><i class="fa fa-filter"></i></md-button>
             {{services.length}} results has found
         </md-subheader>
-        <service model="service" ng-repeat="service in services | filter:{bidType: 1}"></service>
+        <service model="service" ng-repeat="service in services | filter:{bidType: filter.bidType}"></service>
     </md-list>
 </md-content>
 
@@ -13,6 +13,6 @@
         <h1 class="md-toolbar-tools">Filter</h1>
     </md-toolbar>
     <md-content layout-padding>
-        will be filter
+        <input type="number" ng-model="filter.bidType" />
     </md-content>
 </md-sidenav>
