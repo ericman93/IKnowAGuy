@@ -32,7 +32,7 @@ angular.module('iKnowAGuyApp.core')
                                 }
                             });
 
-                            console.log(matchServices)
+                            console.log(matchServices);
                             deferred.resolve(matchServices);
                         }, function (error) {
                             deferred.reject();

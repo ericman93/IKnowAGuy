@@ -20,7 +20,7 @@ angular.module('iKnowAGuyApp.search').controller("searchController", ['$scope', 
         function createFilterFor(query) {
             var lowercaseQuery = angular.lowercase(query);
             return function filterFn(tag) {
-                return tag.name.toLowerCase().indexOf(lowercaseQuery) === 0;
+                return tag.name.toLowerCase().indexOf(lowercaseQuery) >= 0;
             };
         }
 
