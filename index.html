@@ -4,6 +4,11 @@
 </head>
 <body ng-cloak>
 
+<md-backdrop class="md-sidenav-backdrop md-opaque ng-scope" id="loading" ng-show="$root.httpRequests > 0">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</md-backdrop>
+
+
 <md-toolbar>
     <div class="md-toolbar-tools">
         <md-button ui-sref="search">
@@ -36,6 +41,7 @@
 <!-- core -->
 <script src="js/app.js"></script>
 <script src="modules/core/tagService.js"></script>
+<script src="modules/core/httpInterceptorSerivce.js"></script>
 <script src="modules/core/servicesService.js"></script>
 <script src="modules/core/userService.js"></script>
 
