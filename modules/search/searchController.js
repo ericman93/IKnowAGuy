@@ -3,6 +3,6 @@
  */
 angular.module('iKnowAGuyApp.search').controller("searchController", ['$scope',
     function ($scope) {
-        $scope.name = "eric";
+        $scope.tags = ["math", "computers", "sport"];
     }
 ]);
