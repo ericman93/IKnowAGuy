@@ -1,5 +1,5 @@
-angular.module('iKnowAGuyapp.service')
-.factory('serviceService', [
+angular.module('iKnowAGuyapp.core')
+.factory('servicesService', [
        '$q', '$http',
         function($q, $http) {
             function getAll() {
@@ -23,6 +23,7 @@ angular.module('iKnowAGuyapp.service')
             }
 
             return {
+                getAll: getAll,
                 getById: getById,
                 getByTagFilter: getByTagFilter,
                 createService: createService,

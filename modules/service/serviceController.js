@@ -4,14 +4,29 @@
 
 angular.module('iKnowAGuyApp.service')
 .controller('serviceController', [
-        '$scope', 'stateParams', 'serviceService',
-        function($scope, $stateParams, serviceService) {
+        '$scope', 'stateParams', 'servicesService', 'userService',
+        function($scope, $stateParams, servicesService, userService) {
             function initServiceData() {
-                serviceServices.getById($stateParams.id)
+                servicesService.getById($stateParams.id)
                     .then(function (service) {
                         $scope.service = service;
+
+                        userService.getById(service.userId)
+                            .then(function (user) {
+                                $scope.preson = user;
+                            });
                     });
 
+                $scope.service = {
+                    name: 'chulululu',
+                    desc: 'desc'
+                };
+
+                $scope.person = {
+                    icon: '',
+                    name: 'Chu Chuu',
+                    rating: 6
+                };
             }
 
             initServiceData();
