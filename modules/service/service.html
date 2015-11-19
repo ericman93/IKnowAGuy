@@ -26,10 +26,10 @@
             <span flex></span>
             <div class="buy-now" layout="row">
                 <span class="hire-text">Seller Max bid: {{service.maxBid | currency}}</span>
-                <md-button class="md-primary md-raised hire-button">
+                <md-button ng-if="service.enableAuction" class="md-primary md-raised hire-button">
                     Place bid
                 </md-button>
-                <md-button class="md-primary md-raised hire-button">
+                <md-button ng-if="service.enableBuyItNow" class="md-primary md-raised hire-button">
                     Buy it now
                 </md-button>
             </div>
