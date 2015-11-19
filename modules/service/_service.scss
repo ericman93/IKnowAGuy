@@ -1,8 +1,24 @@
 #service-page {
+  background: inherit;
+  padding: 1em;
+
   .service-icon {
     img {
-      height: 60px;
-      width: 60px;
+      height: 8em;
+      width: 8em;
     }
+  }
+
+  .service-body {
+    padding-top: 1em;
+  }
+
+  .person-info {
+    padding-top: 1em;
+
+  }
+
+  .md-whiteframe-z2 {
+    background: hotpink;
   }
 }
