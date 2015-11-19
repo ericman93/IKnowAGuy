@@ -43,8 +43,23 @@ angular.module('iKnowAGuyApp.core')
                 return deferred.promise;
             }
 
-            function createService(service) {
-                // TODO
+            function createService(userId, service) {
+                var deferred = $q.defer();
+
+                var data = {
+                    "__metadata": {
+                        "id": userId
+                    },
+                    "services": [service]
+                };
+
+                $http.put(Backand.getApiUrl() + '/1/objects/users/'+userId+'?deep=true', data).then(function (){
+                    deferred.resolve();
+                }, function(error){
+                    deferred.reject(error.data);
+                });
+
+                return deferred.promise;
             }
 
             function deleteService(id) {
