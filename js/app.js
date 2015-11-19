@@ -1,4 +1,4 @@
-angular.module('iKnowAGuyApp.services', ['']);
+angular.module('iKnowAGuyApp.services', []);
 angular.module('iKnowAGuyApp', ['ui.router', 'iKnowAGuyApp.services']);
 
 angular.module('iKnowAGuyApp').config([
