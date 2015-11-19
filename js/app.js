@@ -1,8 +1,9 @@
 angular.module('iKnowAGuyApp.core', ['backand']);
 angular.module('iKnowAGuyApp.search', []);
+angular.module('iKnowAGuyApp.createService', []);
 angular.module('iKnowAGuyApp.services', []);
 angular.module('iKnowAGuyApp.service', []);
-angular.module('iKnowAGuyApp', ['ui.router', 'ngMaterial', 'iKnowAGuyApp.core', 'iKnowAGuyApp.search', 'iKnowAGuyApp.services', 'iKnowAGuyApp.service']);
+angular.module('iKnowAGuyApp', ['ui.router', 'ngMaterial', 'iKnowAGuyApp.core', 'iKnowAGuyApp.search', 'iKnowAGuyApp.services', 'iKnowAGuyApp.service', 'iKnowAGuyApp.createService']);
 
 angular.module('iKnowAGuyApp').config([
     '$stateProvider', '$urlRouterProvider', 'BackandProvider',
@@ -36,3 +37,21 @@ angular.module('iKnowAGuyApp').config([
         }
     ]
 );
+
+angular.module('iKnowAGuyApp').run([
+    '$rootScope', '$mdDialog',
+    function ($rootScope, $mdDialog) {
+        $rootScope.showCreationForm = function () {
+            $mdDialog.show({
+                controller: "createServiceController",
+                templateUrl: "modules/createService/createService.html",
+                clickOutsideToClose:true
+            })
+            .then(function(answer) {
+                $scope.status = 'You said the information was "' + answer + '".';
+            }, function() {
+                $scope.status = 'You cancelled the dialog.';
+            });
+        }
+    }
+]);
