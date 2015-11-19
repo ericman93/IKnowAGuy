@@ -29,7 +29,7 @@ angular.module('iKnowAGuyApp').config([
 
             $stateProvider
                 .state('service', {
-                    url: '/service/:id',
+                    url: '/services/:id',
                     templateUrl: 'modules/service/service.html',
                     controller: 'serviceController'
                 })
