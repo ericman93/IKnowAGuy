@@ -1,13 +1,15 @@
 <md-content>
     <md-list>
-        <md-subheader class="md-no-sticky">{{services.length}} results has found</md-subheader>
+        <md-subheader class="md-no-sticky">
+            <md-button class="md-fab"><i class="fa fa-filter"></i></md-button>
+            {{services.length}} results has found
+        </md-subheader>
         <service model="service" ng-repeat="service in services"></service>
     </md-list>
 
     <md-button ng-click="toggleFilter()"
                ng-hide="isOpenRight()"
                class="md-primary">
-        Filter
     </md-button>
 </md-content>
 
