@@ -6,7 +6,10 @@ angular.module('iKnowAGuyApp.service')
     .directive('rating',
         function () {
             return {
-                template: 'modules/service/rating.html'
-            }
+                templateUrl: 'modules/service/rating.html',
+                scope: {
+                    rating: '='
+                }
+            };
 
         });

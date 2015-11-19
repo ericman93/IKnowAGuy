@@ -11,6 +11,9 @@ angular.module('iKnowAGuyApp.createService').controller("createServiceController
 
         $scope.create = function () {
             $scope.service.tags = $scope.selectedTags.map(function(tag){
+
+                this.answer('useful');
+
                 return {
                     tag: tag.id
                 }
@@ -33,6 +36,10 @@ angular.module('iKnowAGuyApp.createService').controller("createServiceController
             $state.go('services', {
                 tags: $scope.selectedTags.map(function(tag) { return tag.id })
             });
+        };
+
+        $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
         };
 
         function createFilterFor(query) {
