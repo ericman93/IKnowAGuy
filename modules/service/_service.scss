@@ -1,9 +1,13 @@
 #service-page {
   background: inherit;
-  padding: 1em;
+  margin-top: 3em;
+
+  height: auto;
 
   .service-icon {
+
     img {
+      border-radius: 50%;
       height: 8em;
       width: 8em;
     }
@@ -15,11 +19,25 @@
 
   .person-info {
     padding-top: 1em;
+    background: white;
+
+    span {
+      padding: 0.1em 0.3em;
+    }
 
   }
 
+  span {
+    font-size: 1.5em;
+  }
+
+  .service-title {
+    padding-left: 2em;
+    font-size: 2em;
+    font-weight: bold;
+    -webkit-margin-before: 0.5em;
+  }
+
   .md-whiteframe-z2 {
-    background: beige;
-    
   }
 }

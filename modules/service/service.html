@@ -1,23 +1,26 @@
 <md-content id="service-page">
-    <div layout="row" class="md-whiteframe-z2">
-        <div class="service-icon" flex="15">
-            <img ng-src="{{person.icon}}" />
-        </div>
-        <div flex>
-            <div layout="column" class="service-body">
-                <span class="service-title">{{service.name}}</span>
-                <span class="service-desc">{{service.desc}}</span>
-
+    <div class="md-whiteframe-z2">
+        <div layout="row" class="service-header">
+            <div class="service-icon">
+                <img ng-src="{{person.icon}}" />
+            </div>
+            <div flex>
+                <div layout="column" class="service-body">
+                    <h6 class="service-title">{{service.name}}</h6>
+                </div>
+            </div>
+            <div class="person-info" flex="40">
                 <div layout="row">
-                    ..........
+                    <span flex></span>
+                    <div layout="column">
+                        <span class="info-title">{{person.name}}</span>
+                        <span class="info-rating">Average Rating: {{person.rating}}</span>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="person-info" flex="15">
-            <div layout="column">
-                <span class="info-title">{{person.name}}</span>
-                <span class="info-rating">Average Rating: {{person.rating}}</span>
-            </div>
+        <div>
+            <span class="service-desc">{{service.description}}</span>
         </div>
     </div>
 </md-content>
