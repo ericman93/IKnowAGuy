@@ -26,8 +26,11 @@
             <span flex></span>
             <div class="buy-now" layout="row">
                 <span class="hire-text">Seller Max bid: {{service.maxBid | currency}}</span>
-                <md-button class="md-primary md-raised hire-button">
-                    Hire Now!
+                <md-button ng-if="service.enableAuction" class="md-primary md-raised hire-button">
+                    Place bid
+                </md-button>
+                <md-button ng-if="service.enableBuyItNow" class="md-primary md-raised hire-button">
+                    Buy it now
                 </md-button>
             </div>
         </div>
@@ -36,6 +39,11 @@
             <span class="service-desc">{{service.description}}</span>
         </div>
         <md-divider></md-divider>
+        <md-tabs>
+            <md-tab label="{{rev.title}}" ng-repeat="rev in service.reviews">
+                <rating data="rev"></rating>
+            </md-tab>
+        </md-tabs>
 
     </div>
 </div>
