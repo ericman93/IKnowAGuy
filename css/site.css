@@ -54,8 +54,11 @@ service {
     background: white; }
     #service-page .person-info span {
       padding: 0.1em 0.3em; }
-  #service-page .bidding-purchasing .md-button {
-    margin-top: 0; }
+  #service-page .bidding-purchasing .hire-button {
+    margin-top: 0;
+    margin-bottom: 1em; }
+  #service-page .bidding-purchasing .hire-text {
+    margin-top: 0.1em; }
   #service-page span {
     font-size: 1.5em; }
   #service-page .service-title {
