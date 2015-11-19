@@ -4,7 +4,7 @@
 
 angular.module('iKnowAGuyApp.service')
 .controller('serviceController', [
-        '$scope', '$stateParams', 'servicesService', 'userService',
+        '$scope', '$stateParams', 'Services', 'userService',
         function($scope, $stateParams, servicesService, userService) {
             function initServiceData() {
                 //servicesService.getById($stateParams.id)
@@ -23,7 +23,7 @@ angular.module('iKnowAGuyApp.service')
                 };
 
                 $scope.person = {
-                    icon: '',
+                    icon: 'imgs/person.jpg',
                     name: 'Chu Chuu',
                     rating: 6
                 };
