@@ -18,27 +18,14 @@
 
             <div>
                 <label>Tags</label>
-                <md-chips ng-model="selectedTags" md-autocomplete-snap md-require-match="true">
-                    <md-autocomplete
-                            md-selected-item="selectedTags"
-                            md-search-text="searchText"
-                            md-items="item in querySearch(searchText)"
-                            md-item-text="item.name"
-                            placeholder="Search for a Tags">
-                        <span md-highlight-text="searchText">{{item.name}}</span>
-                    </md-autocomplete>
-
-                    <md-chip-template>
-                        <strong>{{$chip.name}}</strong>
-                    </md-chip-template>
-                </md-chips>
+                <tags-autocomplete tags="selectedTags"></tags-autocomplete>
             </div>
 
         </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
         <span flex></span>
-        <md-button ng-click="answer('not useful')">
+        <md-button ng-click="cancel()">
             Cancel
         </md-button>
         <md-button class="md-raised md-primary" ng-click="create()" style="margin-right:20px;">

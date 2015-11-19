@@ -9,11 +9,12 @@ angular.module('iKnowAGuyApp.createService').controller("createServiceController
             tags: []
         };
 
+        $scope.cancel = function () {
+            $mdDialog.hide();
+        };
+
         $scope.create = function () {
             $scope.service.tags = $scope.selectedTags.map(function(tag){
-
-                this.answer('useful');
-
                 return {
                     tag: tag.id
                 }
@@ -26,37 +27,5 @@ angular.module('iKnowAGuyApp.createService').controller("createServiceController
                 $mdToast.show($mdToast.simple().content(error));
             });
         };
-        
-        $scope.querySearch = function(query) {
-            var results = query ? tags.filter(createFilterFor(query)) : [];
-            return results;
-        };
-
-        $scope.search = function () {
-            $state.go('services', {
-                tags: $scope.selectedTags.map(function(tag) { return tag.id })
-            });
-        };
-
-        $scope.answer = function(answer) {
-            $mdDialog.hide(answer);
-        };
-
-        function createFilterFor(query) {
-            var lowercaseQuery = angular.lowercase(query);
-            return function filterFn(tag) {
-                return tag.name.toLowerCase().indexOf(lowercaseQuery) >= 0;
-            };
-        }
-
-        function getTags(){
-            Tag.getAllTags().then(function (allTags) {
-                tags = allTags;
-            }, function () {
-                tags = [];
-            })
-        }
-
-        getTags();
     }
 ]);
