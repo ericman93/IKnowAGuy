@@ -1,15 +1,13 @@
 <md-content>
     <md-list>
-        <md-subheader class="md-no-sticky">found {{services.length}} results</md-subheader>
-        <md-list-item class="md-3-line" ng-repeat="service in services">
-            <service model="service"></service>
-        </md-list-item>
+        <md-subheader class="md-no-sticky">{{services.length}} results has found</md-subheader>
+        <service model="service" ng-repeat="service in services"></service>
     </md-list>
 
     <md-button ng-click="toggleFilter()"
                ng-hide="isOpenRight()"
                class="md-primary">
-        Toggle right
+        Filter
     </md-button>
 </md-content>
 
@@ -18,15 +16,6 @@
         <h1 class="md-toolbar-tools">Filter</h1>
     </md-toolbar>
     <md-content layout-padding>
-        <form>
-            <md-input-container>
-                <label for="testInput">Test input</label>
-                <input type="text" id="testInput"
-                       ng-model="data" md-autofocus>
-            </md-input-container>
-        </form>
-        <md-button ng-click="close()" class="md-primary">
-            Close Sidenav Right
-        </md-button>
+        will be filter
     </md-content>
 </md-sidenav>

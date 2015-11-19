@@ -25,4 +25,10 @@ header {
 md-sidenav {
   overflow: hidden; }
 
+service {
+  width: 100%; }
+  service img {
+    width: 20px;
+    height: 20px; }
+
 /*# sourceMappingURL=site.css.map */
