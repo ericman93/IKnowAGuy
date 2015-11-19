@@ -25,6 +25,12 @@ header {
 md-sidenav {
   overflow: hidden; }
 
+service {
+  width: 100%; }
+  service img {
+    width: 20px;
+    height: 20px; }
+
 #service-page {
   background: inherit;
   padding: 1em; }
@@ -36,6 +42,6 @@ md-sidenav {
   #service-page .person-info {
     padding-top: 1em; }
   #service-page .md-whiteframe-z2 {
-    background: hotpink; }
+    background: beige; }
 
 /*# sourceMappingURL=site.css.map */
