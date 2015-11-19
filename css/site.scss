@@ -5,8 +5,21 @@ md-content{
   margin-right: auto;
 }
 
+md-toolbar {
+  &.active {
+    display: none;
+  }
+}
+
+.md-toolbar-tools {
+  font-family: cursive;
+  cursor: pointer;
+}
+
 body{
   height: 100%;
+
+  font-family: Helvetica neue, Helvetica, Arial, Sans-serif;
 }
 
 @import "../modules/search/search";
