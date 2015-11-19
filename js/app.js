@@ -48,9 +48,9 @@ angular.module('iKnowAGuyApp').run([
                 clickOutsideToClose:true
             })
             .then(function(answer) {
-                $scope.status = 'You said the information was "' + answer + '".';
+
             }, function() {
-                $scope.status = 'You cancelled the dialog.';
+
             });
         }
     }

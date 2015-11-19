@@ -53,7 +53,8 @@ angular.module('iKnowAGuyApp.core')
                     "services": [service]
                 };
 
-                $http.put(Backand.getApiUrl() + '/1/objects/users/'+userId+'?deep=true', data).then(function (){
+                $http.put(Backand.getApiUrl() + '/1/objects/users/'+userId+'?deep=true', data).then(function (data){
+                    console.log(data)
                     deferred.resolve();
                 }, function(error){
                     deferred.reject(error.data);
