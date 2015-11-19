@@ -15,6 +15,11 @@ body {
   height: 100%;
   font-family: Helvetica neue, Helvetica, Arial, Sans-serif; }
 
+#loading md-progress-circular {
+  margin-right: auto;
+  margin-left: auto;
+  height: 100%; }
+
 header {
   padding-top: 5%;
   padding-bottom: 5%;

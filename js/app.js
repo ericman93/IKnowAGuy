@@ -6,8 +6,10 @@ angular.module('iKnowAGuyApp.service', []);
 angular.module('iKnowAGuyApp', ['ui.router', 'ngMaterial', 'iKnowAGuyApp.core', 'iKnowAGuyApp.search', 'iKnowAGuyApp.services', 'iKnowAGuyApp.service', 'iKnowAGuyApp.createService']);
 
 angular.module('iKnowAGuyApp').config([
-    '$stateProvider', '$urlRouterProvider', 'BackandProvider',
-        function($stateProvider, $urlRouterProvider, BackandProvider){
+    '$stateProvider', '$urlRouterProvider', '$httpProvider', 'BackandProvider',
+        function($stateProvider, $urlRouterProvider, $httpProvider, BackandProvider){
+
+            $httpProvider.interceptors.push('httpInterceptor');
 
             BackandProvider.setAppName('iknowaguy');
             BackandProvider.setSignUpToken('addb836a-ad44-4474-b586-eb94afb51258');
@@ -41,6 +43,8 @@ angular.module('iKnowAGuyApp').config([
 angular.module('iKnowAGuyApp').run([
     '$rootScope', '$mdDialog',
     function ($rootScope, $mdDialog) {
+        $rootScope.httpRequests = 0;
+
         $rootScope.showCreationForm = function () {
             $mdDialog.show({
                 controller: "createServiceController",
