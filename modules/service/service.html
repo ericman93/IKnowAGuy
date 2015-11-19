@@ -40,7 +40,7 @@
         </div>
         <md-divider></md-divider>
         <md-tabs>
-            <md-tab ng-repeat="rev in service.reviews">
+            <md-tab label="{{rev.title}}" ng-repeat="rev in service.reviews">
                 <rating data="rev"></rating>
             </md-tab>
         </md-tabs>
