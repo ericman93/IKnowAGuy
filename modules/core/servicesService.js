@@ -1,4 +1,4 @@
-angular.module('iKnowAGuyapp.core')
+angular.module('iKnowAGuyApp.core')
 .factory('servicesService', [
        '$q', '$http',
         function($q, $http) {
