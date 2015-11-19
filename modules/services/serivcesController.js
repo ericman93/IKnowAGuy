@@ -12,7 +12,7 @@ angular.module('iKnowAGuyApp.services').controller("servicesController", ['$scop
             Services.getByTagFilter($stateParams.tags).then(function(services){
                 $scope.services = services;
             }, function () {
-
+                $scope.services = [];
             })
         }
 

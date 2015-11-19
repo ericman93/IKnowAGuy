@@ -1,15 +1,18 @@
 <md-content>
-    <md-list>
-        <md-subheader class="md-no-sticky">
-            <md-button class="md-fab" aria-label=filter" ng-click="toggleFilter()"><i class="fa fa-filter"></i></md-button>
-            {{filtered.length}} results has found
-        </md-subheader>
-        <service model="service" ng-repeat="service in filtered = (services | bidTypeFilter: filter.bidType)"></service>
-    </md-list>
+    <div ng-show="services">
+        <md-list>
+            <md-subheader class="md-no-sticky">
+                <md-button class="md-fab" aria-label=filter" ng-click="toggleFilter()"><i class="fa fa-filter"></i></md-button>
+                {{filtered.length}} results has found
+            </md-subheader>
+            <service model="service" ng-repeat="service in filtered = (services | bidTypeFilter: filter.bidType)"></service>
+        </md-list>
 
-    <div ng-show="filtered.length == 0">
-        No result has found :(
+        <div ng-show="filtered.length == 0">
+            No result has found :(
+        </div>
     </div>
+
 </md-content>
 
 <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
