@@ -4,7 +4,7 @@
 
 angular.module('iKnowAGuyApp.service')
 .controller('serviceController', [
-        '$scope', 'stateParams', 'servicesService', 'userService',
+        '$scope', '$stateParams', 'servicesService', 'userService',
         function($scope, $stateParams, servicesService, userService) {
             function initServiceData() {
                 //servicesService.getById($stateParams.id)
