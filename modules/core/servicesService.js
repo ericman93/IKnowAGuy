@@ -1,7 +1,7 @@
 angular.module('iKnowAGuyApp.core')
 .factory('Services', [
-       '$q', '$http',
-        function($q, $http) {
+       '$q', '$http', 'Backand',
+        function($q, $http, Backand) {
             function getAll() {
                 //TODO
             }
@@ -13,15 +13,31 @@ angular.module('iKnowAGuyApp.core')
             function getByTagFilter(tags) {
                 var deferred = $q.defer();
 
-                deferred.resolve([{
-                    name: 'Math class',
-                    desc: 'mother fucker math fucker',
-                    bidType: 1
-                },{
-                    name: 'Site building',
-                    desc: 'mother fucker angular fucker',
-                    bidType: 2
-                }]);
+                if (tags.length == 0) {
+                    deferred.resolve([]);
+                }
+                else {
+                    $http.get(Backand.getApiUrl() + '/1/objects/service_tag?deep=true')
+                        .then(function (data) {
+                            var services = data.data.relatedObjects.services;
+                            var matchServices = [];
+
+                            angular.forEach(services, function (service) {
+                                var isFixed = service.tags.split(',').some(function (tag) {
+                                    return tags.indexOf(Number(tag)) >= 0;
+                                });
+
+                                if (isFixed) {
+                                    matchServices.push(service);
+                                }
+                            });
+
+                            console.log(matchServices)
+                            deferred.resolve(matchServices);
+                        }, function (error) {
+                            deferred.reject();
+                        });
+                }
 
                 return deferred.promise;
             }
