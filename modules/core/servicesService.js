@@ -1,5 +1,5 @@
 angular.module('iKnowAGuyApp.core')
-.factory('servicesService', [
+.factory('Services', [
        '$q', '$http',
         function($q, $http) {
             function getAll() {
@@ -11,7 +11,17 @@ angular.module('iKnowAGuyApp.core')
             }
 
             function getByTagFilter(tags) {
-                // TODO
+                var deferred = $q.defer();
+
+                deferred.resolve([{
+                    name: 'Math class',
+                    desc: 'mother fucker math fucker'
+                },{
+                    name: 'Site building',
+                    desc: 'mother fucker angular fucker'
+                }]);
+
+                return deferred.promise;
             }
 
             function createService(service) {

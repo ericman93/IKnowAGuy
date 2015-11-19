@@ -1,20 +1,21 @@
+body {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto; }
+
 header {
   padding-top: 5%;
   padding-bottom: 5%;
   text-align: center; }
   header img {
     height: 20%;
-    width: 20%; }
+    width: 40%; }
 
-#search {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto; }
-  #search md-chips {
-    float: left;
-    width: 85%; }
-  #search md-button {
-    float: right;
-    width: 10%; }
+#search md-chips {
+  float: left;
+  width: 85%; }
+#search md-button {
+  float: right;
+  width: 10%; }
 
 /*# sourceMappingURL=site.css.map */

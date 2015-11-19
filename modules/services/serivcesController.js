@@ -1,3 +1,13 @@
-/**
- * Created by Eric on 19/11/2015.
- */
+angular.module('iKnowAGuyApp.services').controller("servicesController", ['$scope', '$stateParams', 'Services',
+    function ($scope, $stateParams, Services) {
+        function loadServices(){
+            Services.getByTagFilter($stateParams.tags).then(function(services){
+                $scope.services = services;
+            }, function () {
+
+            })
+        }
+
+        loadServices();
+    }
+]);

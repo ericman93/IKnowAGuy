@@ -1,14 +1,21 @@
 /**
  * Created by Eric on 19/11/2015.
  */
-angular.module('iKnowAGuyApp.search').controller("searchController", ['$scope', 'Tag',
-    function ($scope, Tag) {
+angular.module('iKnowAGuyApp.search').controller("searchController", ['$scope', '$state', 'Tag',
+    function ($scope, $state, Tag) {
         var tags;
         $scope.selectedTags = [];
 
         $scope.querySearch = function(query) {
             var results = query ? tags.filter(createFilterFor(query)) : [];
             return results;
+        };
+
+        $scope.search = function () {
+            console.log( $scope.selectedTags)
+            $state.go('services', {
+                tags: $scope.selectedTags
+            });
         };
 
         function createFilterFor(query) {
