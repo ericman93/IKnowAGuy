@@ -1,9 +1,12 @@
-<div id="search">
-    <header>
-        <img src="imgs/logo.png">
-    </header>
-</div>
+<header>
+    <img src="imgs/logo.png">
+</header>
 
-<div>
-    red
+<div id="search">
+    <md-chips ng-model="tags" ">
+        <md-chip-template>
+            <strong>{{$chip}}</strong>
+            <em>(fruit)</em>
+        </md-chip-template>
+    </md-chips>
 </div>
