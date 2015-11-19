@@ -1,7 +1,7 @@
 /**
  * Created by Eric on 19/11/2015.
  */
-angular.module('iKnowAGuyApp.services').controller("servicesController", ['$scope',
+angular.module('iKnowAGuyApp.search').controller("searchController", ['$scope',
     function ($scope) {
         $scope.name = "eric";
     }

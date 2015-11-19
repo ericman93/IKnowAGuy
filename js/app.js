@@ -1,5 +1,5 @@
-angular.module('iKnowAGuyApp.services', []);
-angular.module('iKnowAGuyApp', ['ui.router', 'iKnowAGuyApp.services']);
+angular.module('iKnowAGuyApp.search', []);
+angular.module('iKnowAGuyApp', ['ui.router', 'iKnowAGuyApp.search']);
 
 angular.module('iKnowAGuyApp').config([
     '$stateProvider', '$urlRouterProvider',
@@ -7,10 +7,10 @@ angular.module('iKnowAGuyApp').config([
             $urlRouterProvider.otherwise("/");
 
             $stateProvider
-                .state('services', {
+                .state('search', {
                     url: "/",
-                    templateUrl: "modules/services/services.html",
-                    controller: "servicesController"
+                    templateUrl: "modules/search/search.html",
+                    controller: "searchController"
                 });
         }
     ]
