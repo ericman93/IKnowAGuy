@@ -10,6 +10,7 @@ angular.module('iKnowAGuyApp.services').controller("servicesController", ['$scop
 
         function loadServices(){
             Services.getByTagFilter($stateParams.tags).then(function(services){
+                console.log(services)
                 $scope.services = services;
             }, function () {
 

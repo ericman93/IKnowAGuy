@@ -1,10 +1,15 @@
-angular.module('iKnowAGuyApp.core').factory('Tag', ['$http', '$q',
-    function ($http, $q) {
+angular.module('iKnowAGuyApp.core').factory('Tag', ['$http', '$q', 'Backand',
+    function ($http, $q, Backand) {
 
         function getAllTags(){
             var deferred = $q.defer();
 
-            deferred.resolve(['Sport', 'Math', 'Angular', 'Drugs']);
+            $http.get(Backand.getApiUrl() + '/1/objects/tags')
+                .then(function (data) {
+                    deferred.resolve(data.data.data);
+                }, function (error) {
+                    deferred.reject();
+                });
 
             return deferred.promise;
         }

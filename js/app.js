@@ -1,12 +1,17 @@
-angular.module('iKnowAGuyApp.core', []);
+angular.module('iKnowAGuyApp.core', ['backand']);
 angular.module('iKnowAGuyApp.search', []);
 angular.module('iKnowAGuyApp.services', []);
 angular.module('iKnowAGuyApp.service', []);
 angular.module('iKnowAGuyApp', ['ui.router', 'ngMaterial', 'iKnowAGuyApp.core', 'iKnowAGuyApp.search', 'iKnowAGuyApp.services', 'iKnowAGuyApp.service']);
 
 angular.module('iKnowAGuyApp').config([
-    '$stateProvider', '$urlRouterProvider',
-        function($stateProvider, $urlRouterProvider){
+    '$stateProvider', '$urlRouterProvider', 'BackandProvider',
+        function($stateProvider, $urlRouterProvider, BackandProvider){
+
+            BackandProvider.setAppName('iknowaguy');
+            BackandProvider.setSignUpToken('addb836a-ad44-4474-b586-eb94afb51258');
+            BackandProvider.setAnonymousToken('e147a5e6-6391-4fa2-a4e9-d069b63e60f2');
+
             $urlRouterProvider.otherwise("/");
 
             $stateProvider

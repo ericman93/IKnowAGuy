@@ -12,16 +12,15 @@ angular.module('iKnowAGuyApp.search').controller("searchController", ['$scope', 
         };
 
         $scope.search = function () {
-            console.log( $scope.selectedTags)
             $state.go('services', {
-                tags: $scope.selectedTags
+                tags: $scope.selectedTags.map(function(tag) { return tag.id })
             });
         };
 
         function createFilterFor(query) {
             var lowercaseQuery = angular.lowercase(query);
             return function filterFn(tag) {
-                return tag.toLowerCase().indexOf(lowercaseQuery) === 0;
+                return tag.name.toLowerCase().indexOf(lowercaseQuery) === 0;
             };
         }
 
