@@ -1,4 +1,4 @@
-angular.module('iKnowAGuyapp.core')
+angular.module('iKnowAGuyApp.core')
     .factory('userService', [
         '$q', '$http',
         function($q, $http) {
