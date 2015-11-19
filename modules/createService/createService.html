@@ -1,0 +1,48 @@
+<md-dialog id="create-service" ng-cloak>
+    <md-dialog-content style="max-width:800px;max-height:810px; ">
+        <div class="md-dialog-content">
+
+            <div>
+                <md-input-container>
+                    <label>Description</label>
+                    <input ng-model="service.description">
+                </md-input-container>
+            </div>
+
+            <div>
+                <md-input-container>
+                    <label>Name</label>
+                    <input ng-model="service.name">
+                </md-input-container>
+            </div>
+
+            <div>
+                <label>Tags</label>
+                <md-chips ng-model="selectedTags" md-autocomplete-snap md-require-match="true">
+                    <md-autocomplete
+                            md-selected-item="selectedTags"
+                            md-search-text="searchText"
+                            md-items="item in querySearch(searchText)"
+                            md-item-text="item.name"
+                            placeholder="Search for a Tags">
+                        <span md-highlight-text="searchText">{{item.name}}</span>
+                    </md-autocomplete>
+
+                    <md-chip-template>
+                        <strong>{{$chip.name}}</strong>
+                    </md-chip-template>
+                </md-chips>
+            </div>
+
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="answer('not useful')">
+            Cancel
+        </md-button>
+        <md-button ng-click="create()" style="margin-right:20px;">
+            Create
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

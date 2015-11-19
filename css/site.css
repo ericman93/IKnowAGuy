@@ -1,0 +1,78 @@
+md-content {
+  height: 100%;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto; }
+
+md-toolbar.active {
+  display: none; }
+
+.md-toolbar-tools {
+  font-family: cursive;
+  cursor: pointer; }
+
+body {
+  height: 100%;
+  font-family: Helvetica neue, Helvetica, Arial, Sans-serif; }
+
+#loading md-progress-circular {
+  margin-right: auto;
+  margin-left: auto;
+  height: 100%; }
+
+header {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center; }
+  header img {
+    height: 20%;
+    width: 20%; }
+
+#search md-chips {
+  float: left;
+  width: 85%; }
+#search md-button {
+  float: right;
+  width: 10%; }
+
+md-sidenav {
+  overflow: hidden; }
+
+service {
+  width: 100%; }
+  service img {
+    width: 20px;
+    height: 20px; }
+
+#service-page {
+  background: inherit;
+  margin-top: 3em;
+  height: auto; }
+  #service-page .service-icon img {
+    border-radius: 50%;
+    height: 8em;
+    width: 8em; }
+  #service-page .service-body {
+    padding-top: 1em; }
+  #service-page .person-info {
+    padding-top: 1em;
+    background: white; }
+    #service-page .person-info span {
+      padding: 0.1em 0.3em; }
+  #service-page .bidding-purchasing .hire-button {
+    margin-top: 0;
+    margin-bottom: 1em; }
+  #service-page .bidding-purchasing .hire-text {
+    margin-top: 0.1em; }
+  #service-page span {
+    font-size: 1.5em; }
+  #service-page .service-title {
+    padding-left: 2em;
+    font-size: 2em;
+    font-weight: bold;
+    -webkit-margin-before: 0.5em; }
+
+#create-service {
+  width: 50%; }
+
+/*# sourceMappingURL=site.css.map */

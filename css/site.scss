@@ -1,0 +1,37 @@
+md-content{
+  height: 100%;
+  width: 70%;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+md-toolbar {
+  &.active {
+    display: none;
+  }
+}
+
+.md-toolbar-tools {
+  font-family: cursive;
+  cursor: pointer;
+}
+
+body{
+  height: 100%;
+
+  font-family: Helvetica neue, Helvetica, Arial, Sans-serif;
+}
+
+#loading {
+  md-progress-circular {
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+   }
+}
+
+@import "../modules/search/search";
+@import "../modules/services/services";
+@import "../modules/service/service";
+@import "../modules/createService/createService";
