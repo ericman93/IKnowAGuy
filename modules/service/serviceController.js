@@ -4,7 +4,7 @@
 
 angular.module('iKnowAGuyApp.service')
     .controller('serviceController', [
-        '$scope', '$stateParams', 'Services', 'userService', 'paymentService',
+        '$scope', '$stateParams', 'Services', 'userService', 'Payment',
         function ($scope, $stateParams, servicesService, userService, paymentService) {
             function initServiceData() {
                 servicesService.getById($stateParams.id)
@@ -35,8 +35,6 @@ angular.module('iKnowAGuyApp.service')
                     name: $scope.service.user.firstName + ' ' + $scope.service.user.lastName,
                     rating: 66
                 };
-
-
             }
 
             function getCurrentBid(service) {
