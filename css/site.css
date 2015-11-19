@@ -25,4 +25,8 @@ header {
 md-sidenav {
   overflow: hidden; }
 
+#service-page .service-icon img {
+  height: 60px;
+  width: 60px; }
+
 /*# sourceMappingURL=site.css.map */
