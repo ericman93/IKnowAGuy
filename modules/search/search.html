@@ -2,11 +2,21 @@
     <img src="imgs/logo.png">
 </header>
 
-<div id="search">
-    <md-chips ng-model="tags" ">
+<div id="search" class="md-padding">
+    <md-chips ng-model="selectedTags" md-autocomplete-snap md-require-match="true">
+        <md-autocomplete
+                md-selected-item="selectedItem"
+                md-search-text="searchText"
+                md-items="item in querySearch(searchText)"
+                md-item-text="item"
+                placeholder="Search for a Tags">
+            <span md-highlight-text="searchText">{{item}}</span>
+        </md-autocomplete>
+
         <md-chip-template>
             <strong>{{$chip}}</strong>
-            <em>(fruit)</em>
         </md-chip-template>
     </md-chips>
+
+    <md-button class="md-raised md-primary">Search !</md-button>
 </div>

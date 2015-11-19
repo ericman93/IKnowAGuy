@@ -1,5 +1,6 @@
+angular.module('iKnowAGuyApp.core', []);
 angular.module('iKnowAGuyApp.search', []);
-angular.module('iKnowAGuyApp', ['ui.router', 'ngMaterial', 'iKnowAGuyApp.search']);
+angular.module('iKnowAGuyApp', ['ui.router', 'ngMaterial', 'iKnowAGuyApp.core', 'iKnowAGuyApp.search']);
 
 angular.module('iKnowAGuyApp').config([
     '$stateProvider', '$urlRouterProvider',
