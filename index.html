@@ -4,14 +4,20 @@
 </head>
 <body ng-cloak>
 
-<md-toolbar layout="column" class="md-whiteframe-z5" ui-sref-active="active">
-    <span flex></span>
-    <span layout="row" layout-padding ui-sref="search">
-        <h1 class="md-toolbar-tools md-toolbar-tools-bottom">
-            Home Page
-        </h1>
-    </span>
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button ui-sref="search">
+            Home page
+        </md-button>
+
+        <span flex></span>
+
+        <md-button class="md-fab md-mini" aria-label="create" ng-click="$root.showCreationForm()">
+            <i class="fa fa-plus"></i>
+        </md-button>
+    </div>
 </md-toolbar>
+
 <div ui-view id="ui-view"></div>
 
 <!-- css -->
@@ -32,6 +38,9 @@
 <script src="modules/core/tagService.js"></script>
 <script src="modules/core/servicesService.js"></script>
 <script src="modules/core/userService.js"></script>
+
+<!-- create service -->
+<script src="modules/createService/createServiceController.js"></script>
 
 <!-- search -->
 <script src="modules/search/searchController.js"></script>

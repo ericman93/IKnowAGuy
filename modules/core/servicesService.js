@@ -16,6 +16,7 @@ angular.module('iKnowAGuyApp.core')
                 if (tags.length == 0) {
                     deferred.resolve([]);
                 }
+
                 else {
                     $http.get(Backand.getApiUrl() + '/1/objects/service_tag?deep=true')
                         .then(function (data) {
@@ -32,7 +33,7 @@ angular.module('iKnowAGuyApp.core')
                                 }
                             });
 
-                            console.log(matchServices)
+                            console.log(matchServices);
                             deferred.resolve(matchServices);
                         }, function (error) {
                             deferred.reject();
