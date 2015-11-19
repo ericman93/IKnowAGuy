@@ -28,11 +28,9 @@ angular.module('iKnowAGuyApp').config([
                     params:{tags:{}},
                     templateUrl: "modules/services/services.html",
                     controller: "servicesController"
-                });
-
-            $stateProvider
-                .state('service', {
-                    url: '/services/:id',
+                })
+                .state('services.service', {
+                    url: '/:id',
                     templateUrl: 'modules/service/service.html',
                     controller: 'serviceController'
                 })

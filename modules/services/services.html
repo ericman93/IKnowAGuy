@@ -1,5 +1,6 @@
 <md-content>
-    <div ng-show="services">
+
+    <div ng-show="services" ui-sref-active="services">
         <md-list>
             <md-subheader class="md-no-sticky">
                 <md-button class="md-fab" aria-label=filter" ng-click="toggleFilter()"><i class="fa fa-filter"></i></md-button>
@@ -12,6 +13,8 @@
             No result has found :(
         </div>
     </div>
+
+    <div ui-view></div>
 
 </md-content>
 
