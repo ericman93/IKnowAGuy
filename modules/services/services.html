@@ -1,16 +1,11 @@
 <md-content>
     <md-list>
         <md-subheader class="md-no-sticky">
-            <md-button class="md-fab"><i class="fa fa-filter"></i></md-button>
+            <md-button class="md-fab" aria-label=filter" ng-click="toggleFilter()"><i class="fa fa-filter"></i></md-button>
             {{services.length}} results has found
         </md-subheader>
-        <service model="service" ng-repeat="service in services"></service>
+        <service model="service" ng-repeat="service in services | filter:{bidType: 1}"></service>
     </md-list>
-
-    <md-button ng-click="toggleFilter()"
-               ng-hide="isOpenRight()"
-               class="md-primary">
-    </md-button>
 </md-content>
 
 <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
