@@ -39,6 +39,11 @@
             <span class="service-desc">{{service.description}}</span>
         </div>
         <md-divider></md-divider>
+        <md-tabs>
+            <md-tab ng-repeat="rev in service.reviews">
+                <rating data="rev"></rating>
+            </md-tab>
+        </md-tabs>
 
     </div>
 </div>

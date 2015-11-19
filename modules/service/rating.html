@@ -1,9 +1,9 @@
 <div layout="row">
     <div class="rating-body">
-        <h1>{{rating.title}}</h1>
-        <p>{{rating.description}}</p>
+        <h1>{{data.title}}</h1>
+        <p>{{data.content}}</p>
     </div>
     <div class="stars">
-        <img ng-repeat="i in xrange(rating.stars)" ng-src="imgs/star.png"></img>
+        <img ng-repeat="i in data.score" ng-src="imgs/star.png"></img>
     </div>
 </div>
