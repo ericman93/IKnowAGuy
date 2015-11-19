@@ -16,6 +16,7 @@ angular.module('iKnowAGuyApp.core')
                 if (tags.length == 0) {
                     deferred.resolve([]);
                 }
+
                 else {
                     $http.get(Backand.getApiUrl() + '/1/objects/service_tag?deep=true')
                         .then(function (data) {
