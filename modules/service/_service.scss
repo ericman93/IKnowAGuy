@@ -4,6 +4,11 @@
 
   height: auto;
 
+  .layout-row{
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+
   .reviews-content {}
 
   .service-icon {
@@ -43,8 +48,9 @@
     margin-top: 0.1em;
   }
 
+  .bid-type,
   .buy-now {
-
+    display: block;
   }
 }
 
