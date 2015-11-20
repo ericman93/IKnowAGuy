@@ -8,12 +8,10 @@ md-toolbar.active {
   display: none; }
 
 .md-toolbar-tools {
-  font-family: cursive;
   cursor: pointer; }
 
 body {
-  height: 100%;
-  font-family: Helvetica neue, Helvetica, Arial, Sans-serif; }
+  height: 100%; }
 
 #loading md-progress-circular {
   margin-right: auto;
@@ -51,6 +49,9 @@ service {
   background: inherit;
   margin-top: 3em;
   height: auto; }
+  #service-page .layout-row {
+    padding-bottom: 15px;
+    padding-top: 15px; }
   #service-page .service-icon img {
     border-radius: 50%;
     height: 8em;
@@ -70,6 +71,9 @@ service {
     margin-bottom: 1em; }
   #service-page .bidding-purchasing .hire-text {
     margin-top: 0.1em; }
+  #service-page .bidding-purchasing .bid-type,
+  #service-page .bidding-purchasing .buy-now {
+    display: block; }
   #service-page span {
     font-size: 1.5em; }
   #service-page .service-title {
