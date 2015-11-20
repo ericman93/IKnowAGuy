@@ -37,7 +37,7 @@ angular.module('iKnowAGuyApp.service')
                 var amount = data.filter(function(obj) {
                     return obj.Key == 'amount'
                 })[0];
-                
+
                 if (serviceId.Value == $stateParams.id)
                     $scope.currentBid = amount.Value;
             });
