@@ -6,6 +6,14 @@ angular.module('iKnowAGuyApp.service')
     .controller('serviceController', [
         '$scope', '$stateParams', '$mdDialog', '$mdToast', 'Services', 'userService', 'Payment', 'Backand',
         function ($scope, $stateParams, $mdDialog, $mdToast, servicesService, userService, paymentService, Backand) {
+
+            $scope.service = {};
+            $scope.currentBid = {};
+
+            $scope.service.maxPrice = "--";
+            $scope.service.buyItNowPrice = "--";
+            $scope.currentBid = "--";
+
             function initServiceData() {
                 servicesService.getById($stateParams.id)
                     .then(function (service) {
@@ -68,7 +76,7 @@ angular.module('iKnowAGuyApp.service')
                         maxBid = bid;
                 }
 
-                return maxBid.amount;
+                return maxBid == null ? "-" : maxBid.amount;
 
             }
 
