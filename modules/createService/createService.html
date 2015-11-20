@@ -1,0 +1,61 @@
+<md-dialog id="create-service" ng-cloak>
+    <md-dialog-content style="max-width:800px;max-height:810px; ">
+        <div class="md-dialog-content">
+
+            <div>
+                <md-input-container>
+                    <label>Name</label>
+                    <input ng-model="service.name">
+                </md-input-container>
+            </div>
+
+            <div>
+                <md-input-container md-no-float="true">
+                    <label>Description</label>
+                    <input ng-model="service.description">
+                </md-input-container>
+            </div>
+
+            <div layout="row">
+                <md-switch ng-model="service.enableAuction" aria-label="Switch 1" class="md-block">
+                    Auction
+                </md-switch>
+                <md-input-container ng-hide="!service.enableAuction">
+                    <label>Min Price</label>
+                    <input ng-model="service.minPrice">
+                </md-input-container>
+                <md-input-container ng-hide="!service.enableAuction">
+                    <label>Max Price</label>
+                    <input ng-model="service.maxPrice">
+                </md-input-container>
+            </div>
+
+
+
+            <div layout="row">
+                <md-switch ng-model="service.enableBuyItNow" aria-label="Switch 1" class="md-block">
+                    Buy It Now
+                </md-switch>
+                <md-input-container ng-hide="!service.enableBuyItNow">
+                    <label>Price</label>
+                    <input ng-model="service.buyItNowPrice">
+                </md-input-container>
+            </div>
+
+            <div>
+                <label>Tags</label>
+                <tags-autocomplete tags="selectedTags"></tags-autocomplete>
+            </div>
+
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="cancel()">
+            Cancel
+        </md-button>
+        <md-button class="md-raised md-primary" ng-click="create()" style="margin-right:20px;">
+            Create
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

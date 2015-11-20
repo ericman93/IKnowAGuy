@@ -1,0 +1,72 @@
+<html ng-app="iKnowAGuyApp">
+<head>
+    <title>I Know a Guy</title>
+</head>
+<body ng-cloak>
+
+<md-backdrop class="md-sidenav-backdrop md-opaque ng-scope" id="loading" ng-show="$root.httpRequests > 0">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</md-backdrop>
+
+
+<md-toolbar class="md-whiteframe-z5">
+    <div class="md-toolbar-tools">
+        <md-button ui-sref="search">
+            Home page
+        </md-button>
+
+        <span flex></span>
+
+        <md-button class="md-fab md-mini" aria-label="create" ng-click="$root.showCreationForm()">
+            <i class="fa fa-plus"></i>
+        </md-button>
+    </div>
+</md-toolbar>
+
+<div ui-view id="ui-view"></div>
+
+<!-- css -->
+<link rel="stylesheet" href="js/bower_components/angular-material/angular-material.css">
+<link rel="stylesheet" href="js/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/site.css">
+
+<!-- libs -->
+<script src="js/bower_components/angular/angular.js"></script>
+<script src="js/bower_components/angular-animate/angular-animate.js"></script>
+<script src="js/bower_components/angular-aria/angular-aria.js"></script>
+<script src="js/bower_components/angular-material/angular-material.js"></script>
+<script src="js/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+<!-- Backand SDK for Angular -->
+<script src="http://cdn.backand.net/backand/dist/1.8.2/backand.debug.js"></script>
+<!-- Backand Realtime -->
+<script src="http://api.backand.com:4000/socket.io/socket.io.js"></script>
+
+<!-- core -->
+<script src="js/app.js"></script>
+<script src="modules/core/services/tagService.js"></script>
+<script src="modules/core/services/httpInterceptorSerivce.js"></script>
+<script src="modules/core/services/servicesService.js"></script>
+<script src="modules/core/services/paymentService.js"></script>
+<script src="modules/core/services/userService.js"></script>
+<script src="modules/core/directives/tagsAutocomplete/tagsAutocompleteDirective.js"></script>
+
+<!-- create service -->
+<script src="modules/createService/createServiceController.js"></script>
+<script src="modules/createBid/createBidController.js"></script>
+
+<!-- search -->
+<script src="modules/search/searchController.js"></script>
+
+<!-- services -->
+<script src="modules/services/serivcesController.js"></script>
+<script src="modules/services/service/serviceDirective.js"></script>
+<script src="modules/services/filters/bidTypeFilter.js"></script>
+
+<!-- service -->
+<script src="modules/service/serviceController.js"></script>
+<script src="modules/service/ratingDirective.js"></script>
+
+</body>
+</html>

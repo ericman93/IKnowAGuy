@@ -1,0 +1,70 @@
+#service-page {
+  background: inherit;
+  margin-top: 3em;
+
+  height: auto;
+
+  .layout-row{
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+
+  .reviews-content {}
+
+  .service-icon {
+
+    img {
+      border-radius: 50%;
+      height: 8em;
+      width: 8em;
+    }
+  }
+
+  img {
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+  .service-body {
+    padding-top: 1em;
+  }
+
+  .person-info {
+    padding-top: 1em;
+    background: white;
+
+    span {
+      padding: 0.1em 0.3em;
+    }
+
+  }
+
+.bidding-purchasing {
+  .hire-button {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  .hire-text {
+    margin-top: 0.1em;
+  }
+
+  .bid-type,
+  .buy-now {
+    display: block;
+  }
+}
+
+  span {
+    font-size: 1.5em;
+  }
+
+  .service-title {
+    padding-left: 2em;
+    font-size: 2em;
+    font-weight: bold;
+    -webkit-margin-before: 0.5em;
+  }
+
+  .md-whiteframe-z2 {
+  }
+}
