@@ -1,5 +1,5 @@
-angular.module('iKnowAGuyApp.core').factory('Payment', ['$http', '$q', 'Backand',
-    function ($http, $q, Backand) {
+angular.module('iKnowAGuyApp.core').factory('Payment', ['$http', '$q', 'Backand', '$stateParams',
+    function ($http, $q, Backand, $stateParams) {
 
         function getAllBids() {
             var deferred = $q.defer();
@@ -13,12 +13,6 @@ angular.module('iKnowAGuyApp.core').factory('Payment', ['$http', '$q', 'Backand'
 
             return deferred.promise;
         }
-
-        //Wait for server updates on 'items' object
-        Backand.on('NewHighestBid', function (data) {
-            //Get the 'items' object that have changed
-            alert(data);
-        });
 
         function createBid(userId, serviceId, amount) {
             var deferred = $q.defer();

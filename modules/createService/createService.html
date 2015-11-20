@@ -22,10 +22,14 @@
                 </md-switch>
             </div>
 
-            <div>
+            <div layout="row">
                 <md-switch ng-model="service.enableBuyItNow" aria-label="Switch 1" class="md-block">
                     Buy It Now
                 </md-switch>
+                <md-input-container ng-hide="!service.enableBuyItNow">
+                    <label>Price</label>
+                    <input ng-model="service.buyItNowPrice">
+                </md-input-container>
             </div>
 
             <div>

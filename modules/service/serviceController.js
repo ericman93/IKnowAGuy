@@ -4,8 +4,8 @@
 
 angular.module('iKnowAGuyApp.service')
     .controller('serviceController', [
-        '$scope', '$stateParams', '$mdDialog', '$mdToast', 'Services', 'userService', 'Payment',
-        function ($scope, $stateParams, $mdDialog, $mdToast, servicesService, userService, paymentService) {
+        '$scope', '$stateParams', '$mdDialog', '$mdToast', 'Services', 'userService', 'Payment', 'Backand',
+        function ($scope, $stateParams, $mdDialog, $mdToast, servicesService, userService, paymentService, Backand) {
             function initServiceData() {
                 servicesService.getById($stateParams.id)
                     .then(function (service) {
@@ -26,6 +26,17 @@ angular.module('iKnowAGuyApp.service')
 
 
             }
+
+            //Wait for server updates on 'items' object
+            Backand.on('newHighestBid', function (data) {
+
+                var serviceId = data.filter(function(obj) {
+                    return obj.Key == 'serviceId'
+                })[0];
+
+                if (serviceId.Value == $stateParams.id)
+                    $scope.currentBid = data.Value;
+            });
 
             function initServiceData2(service) {
                 $scope.service = service;
