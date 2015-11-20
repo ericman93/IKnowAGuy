@@ -36,3 +36,6 @@ def xor_two(word1, word2):
 		res += chr(ord(word1[i]) ^ ord(word2[i]))
 	
 	return res
+	
+def get_ord(hex_string):
+	return ord(hex_string.decode('hex')
