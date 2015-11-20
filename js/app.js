@@ -1,9 +1,10 @@
 angular.module('iKnowAGuyApp.core', ['backand']);
 angular.module('iKnowAGuyApp.search', []);
 angular.module('iKnowAGuyApp.createService', []);
+angular.module('iKnowAGuyApp.createBid', []);
 angular.module('iKnowAGuyApp.services', []);
 angular.module('iKnowAGuyApp.service', []);
-angular.module('iKnowAGuyApp', ['ui.router', 'ngMaterial', 'iKnowAGuyApp.core', 'iKnowAGuyApp.search', 'iKnowAGuyApp.services', 'iKnowAGuyApp.service', 'iKnowAGuyApp.createService']);
+angular.module('iKnowAGuyApp', ['ui.router', 'ngMaterial', 'iKnowAGuyApp.core', 'iKnowAGuyApp.search', 'iKnowAGuyApp.services', 'iKnowAGuyApp.service', 'iKnowAGuyApp.createService', 'iKnowAGuyApp.createBid']);
 
 angular.module('iKnowAGuyApp').config([
     '$stateProvider', '$urlRouterProvider', '$httpProvider', 'BackandProvider',

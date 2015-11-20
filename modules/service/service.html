@@ -21,15 +21,16 @@
         </div>
         <div class="bidding-purchasing" layout="row">
             <div class="bid-now" layout="row">
-                <span class="bid-text">Current bid: {{service.currentBid | currency}}</span>
+                <span class="bid-text">Current bid: {{currentBid}}</span>
             </div>
             <span flex></span>
             <div class="buy-now" layout="row">
-                <span class="hire-text">Seller Max bid: {{service.maxBid | currency}}</span>
-                <md-button ng-if="service.enableAuction" class="md-primary md-raised hire-button">
+                <span class="hire-text">Seller Max bid: {{service.maxPrice}}</span>
+
+                <md-button ng-if="service.enableAuction" ng-click="createBid()" class="md-primary md-raised hire-button">
                     Place bid
                 </md-button>
-                <md-button ng-if="service.enableBuyItNow" class="md-primary md-raised hire-button">
+                <md-button ng-if="service.enableBuyItNow" ng-click="buyItNow()" class="md-primary md-raised hire-button">
                     Buy it now
                 </md-button>
             </div>

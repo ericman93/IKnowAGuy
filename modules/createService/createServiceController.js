@@ -21,7 +21,7 @@ angular.module('iKnowAGuyApp.createService').controller("createServiceController
             });
 
             Services.createService(16, $scope.service).then(function () {
-                $mdToast.show($mdToast.simple().content('Yay!'));
+                $mdToast.show($mdToast.simple().content('Service successfully created'));
                 $mdDialog.hide();
             }, function (error) {
                 $mdToast.show($mdToast.simple().content(error));

@@ -4,8 +4,8 @@
 
 angular.module('iKnowAGuyApp.service')
     .controller('serviceController', [
-        '$scope', '$stateParams', 'Services', 'userService', 'Payment',
-        function ($scope, $stateParams, servicesService, userService, paymentService) {
+        '$scope', '$stateParams', '$mdDialog', 'Services', 'userService', 'Payment',
+        function ($scope, $stateParams, $mdDialog, servicesService, userService, paymentService) {
             function initServiceData() {
                 servicesService.getById($stateParams.id)
                     .then(function (service) {
@@ -35,21 +35,58 @@ angular.module('iKnowAGuyApp.service')
                     name: $scope.service.user.firstName + ' ' + $scope.service.user.lastName,
                     rating: 66
                 };
+
+                $scope.currentBid = getCurrentBid(service);
             }
 
             function getCurrentBid(service) {
 
-                paymentService.getById()
+                var maxBid = null;
 
-                servicesService.getById($stateParams.id)
-                    .then(function (service) {
-                        initServiceData2(service);
-                        /*                        userService.getById(service.userId)
-                         .then(function (user) {
-                         $scope.preson = user;
-                         });*/
-                    });
+                for (var i = 0; i < service.bids.length; i++) {
+
+                    var bid = service.bids[i];
+
+                    if (maxBid == null)
+                        maxBid = bid;
+                    else if (bid.amount > maxBid.amount)
+                        maxBid = bid;
+                }
+
+                return maxBid.amount;
+
             }
+
+            $scope.buyItNow = function () {
+                // Appending dialog to document.body to cover sidenav in docs app
+                var confirm = $mdDialog.confirm()
+                    .title('Would you like to buy this service ?')
+                    .textContent('Blab lblabla.')
+                    .ariaLabel('Lucky day')
+                    .ok('Buy It Now')
+                    .clickOutsideToClose(true)
+                    .cancel('Cancel');
+
+                $mdDialog.show(confirm).then(function () {
+                    $scope.status = 'You decided to get rid of your debt.';
+                }, function () {
+                    $scope.status = 'You decided to keep your debt.';
+                });
+            };
+
+            $scope.createBid = function () {
+                $mdDialog.show({
+                    controller: "createBidController",
+                    templateUrl: "modules/createBid/createBid.html",
+                    clickOutsideToClose: true,
+                    locals: {
+                        service: $scope.service
+                    }
+                })
+                    .then(function (answer) {
+                    }, function () {
+                    });
+            };
 
             initServiceData();
         }
