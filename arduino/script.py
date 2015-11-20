@@ -47,7 +47,7 @@ def get_word_from_list(hex_list):
 	res = ''
 	ords_list = get_ords_list(hex_list)
 	
-	for i in range(len(ords_list)):
 		res += chr(ords_list[i])
+	for i in range(len(ords_list)):
 	
 	return res
