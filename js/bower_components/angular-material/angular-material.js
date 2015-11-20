@@ -16596,7 +16596,7 @@ angular.module('material.components.virtualRepeat', [
  * @param {number=} md-auto-shrink-min Minimum number of items that md-auto-shrink
  *     will shrink to (default: 0).
  */
-function VirtualRepeatContainerDirective() {
+function  VirtualRepeatContainerDirective() {
   return {
     controller: VirtualRepeatContainerController,
     template: virtualRepeatContainerTemplate,

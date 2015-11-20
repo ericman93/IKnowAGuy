@@ -40,11 +40,11 @@
             <span class="service-desc">{{service.description}}</span>
         </div>
         <md-divider></md-divider>
-        <md-tabs>
-            <md-tab label="{{rev.title}}" ng-repeat="rev in service.reviews">
-                <rating data="rev"></rating>
-            </md-tab>
-        </md-tabs>
-
-    </div>
+            <md-list class="review-list">
+                <md-subheader class="subheader">reviews of {{person.name}}</md-subheader>
+                <md-list-item label="{{rev.title}}" ng-repeat="rev in service.reviews" class="md-long-text">
+                    <rating data="rev"></rating>
+                </md-list-item>
+            </md-list>
+        </div>
 </div>
