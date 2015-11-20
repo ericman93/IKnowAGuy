@@ -34,8 +34,12 @@ angular.module('iKnowAGuyApp.service')
                     return obj.Key == 'serviceId'
                 })[0];
 
+                var amount = data.filter(function(obj) {
+                    return obj.Key == 'amount'
+                })[0];
+                
                 if (serviceId.Value == $stateParams.id)
-                    $scope.currentBid = data.Value;
+                    $scope.currentBid = amount.Value;
             });
 
             function initServiceData2(service) {
