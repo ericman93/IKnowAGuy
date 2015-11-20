@@ -16,11 +16,21 @@
                 </md-input-container>
             </div>
 
-            <div>
+            <div layout="row">
                 <md-switch ng-model="service.enableAuction" aria-label="Switch 1" class="md-block">
                     Auction
                 </md-switch>
+                <md-input-container ng-hide="!service.enableAuction">
+                    <label>Min Price</label>
+                    <input ng-model="service.minPrice">
+                </md-input-container>
+                <md-input-container ng-hide="!service.enableAuction">
+                    <label>Max Price</label>
+                    <input ng-model="service.maxPrice">
+                </md-input-container>
             </div>
+
+
 
             <div layout="row">
                 <md-switch ng-model="service.enableBuyItNow" aria-label="Switch 1" class="md-block">

@@ -80,5 +80,7 @@ service {
 
 #create-service {
   width: 50%; }
+  #create-service md-dialog-content {
+    width: 100%; }
 
 /*# sourceMappingURL=site.css.map */
