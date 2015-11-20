@@ -30,6 +30,8 @@
                 <md-button ng-if="service.enableAuction" ng-click="createBid()" class="md-primary md-raised hire-button">
                     Place bid
                 </md-button>
+
+                <span class="hire-text">Buy It Now Price: {{service.buyItNowPrice}}</span>
                 <md-button ng-if="service.enableBuyItNow" ng-click="buyItNow()" class="md-primary md-raised hire-button">
                     Buy it now
                 </md-button>

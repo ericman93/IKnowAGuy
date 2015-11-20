@@ -4,8 +4,8 @@
 
 angular.module('iKnowAGuyApp.service')
     .controller('serviceController', [
-        '$scope', '$stateParams', '$mdDialog', 'Services', 'userService', 'Payment',
-        function ($scope, $stateParams, $mdDialog, servicesService, userService, paymentService) {
+        '$scope', '$stateParams', '$mdDialog', '$mdToast', 'Services', 'userService', 'Payment',
+        function ($scope, $stateParams, $mdDialog, $mdToast, servicesService, userService, paymentService) {
             function initServiceData() {
                 servicesService.getById($stateParams.id)
                     .then(function (service) {
@@ -61,14 +61,19 @@ angular.module('iKnowAGuyApp.service')
                 // Appending dialog to document.body to cover sidenav in docs app
                 var confirm = $mdDialog.confirm()
                     .title('Would you like to buy this service ?')
-                    .textContent('Blab lblabla.')
+                    .textContent('Buying this service will substract ' + $scope.service.buyItNowPrice + ' orbits from your balance.')
                     .ariaLabel('Lucky day')
                     .ok('Buy It Now')
                     .clickOutsideToClose(true)
                     .cancel('Cancel');
 
                 $mdDialog.show(confirm).then(function () {
-                    $scope.status = 'You decided to get rid of your debt.';
+                    paymentService.createPayment(16, $scope.service.id, $scope.service.buyItNowPrice).then(function () {
+                        $mdToast.show($mdToast.simple().content('Bid successfully created'));
+                        $mdDialog.hide();
+                    }, function (error) {
+                        $mdToast.show($mdToast.simple().content(error));
+                    });
                 }, function () {
                     $scope.status = 'You decided to keep your debt.';
                 });

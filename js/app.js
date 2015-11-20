@@ -16,9 +16,8 @@ angular.module('iKnowAGuyApp').config([
             BackandProvider.setSignUpToken('addb836a-ad44-4474-b586-eb94afb51258');
             BackandProvider.setAnonymousToken('e147a5e6-6391-4fa2-a4e9-d069b63e60f2');
 
-            BackandProvider.runSocket(true); //enable the web sockets that makes the database realtime
-
             BackandProvider.setSocketUrl('http://api.backand.com:4000');
+            BackandProvider.runSocket(true); //enable the web sockets that makes the database realtime
 
             $urlRouterProvider.otherwise("/");
 

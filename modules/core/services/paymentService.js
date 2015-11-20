@@ -15,7 +15,7 @@ angular.module('iKnowAGuyApp.core').factory('Payment', ['$http', '$q', 'Backand'
         }
 
         //Wait for server updates on 'items' object
-        Backand.on('newHighestBid', function (data) {
+        Backand.on('NewHighestBid', function (data) {
             //Get the 'items' object that have changed
             alert(data);
         });
@@ -51,7 +51,7 @@ angular.module('iKnowAGuyApp.core').factory('Payment', ['$http', '$q', 'Backand'
                 "__metadata": {
                     "id": serviceId
                 },
-                "bids": [{
+                "transactions": [{
                     "user": userId,
                     "amount": amount,
                     "timestamp": new Date(),
@@ -59,7 +59,7 @@ angular.module('iKnowAGuyApp.core').factory('Payment', ['$http', '$q', 'Backand'
                 }]
             };
 
-            $http.put(Backand.getApiUrl() + '/1/objects/transactions/' + serviceId + '?deep=true', data).then(function (data) {
+            $http.put(Backand.getApiUrl() + '/1/objects/services/' + serviceId + '?deep=true', data).then(function (data) {
                 console.log(data)
                 deferred.resolve();
             }, function (error) {
