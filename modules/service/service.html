@@ -24,14 +24,14 @@
 
         <div class="bidding-purchasing" layout="row">
             <div class="bid-now" layout="row">
-                <span class="bid-text">Current bid: {{currentBid}}</span>
-                <img src="imgs\Orbit-icon.png" />
+                <span class="bid-text">Current bid: {{currentBid == null ? "--" : currentBid}}</span>
+                <!--<img src="imgs\Orbit-icon.png" />-->
             </div>
             <span flex></span>
             <div class="buy-now" layout="row">
                 <div class="bid-type">
-                    <span class="hire-text">Seller Max bid: {{service.maxPrice}}</span>
-                    <img src="imgs\Orbit-icon.png" />
+                    <span class="hire-text">Seller Max bid: {{service.maxPrice == null ? "--" : service.maxPrice}}</span>
+                    <!--<img src="imgs\Orbit-icon.png" />-->
 
                     <md-button ng-if="service.enableAuction" ng-click="createBid()" class="md-primary md-raised hire-button">
                         Place bid
@@ -39,8 +39,8 @@
                 </div>
 
                 <div class="bid-type">
-                    <span class="hire-text">Buy It Now Price: {{service.buyItNowPrice}}</span>
-                    <img src="imgs\Orbit-icon.png" />
+                    <span class="hire-text">Buy It Now Price: {{service.buyItNowPrice == null ? "--" : service.buyItNowPrice}}</span>
+                    <!--<img src="imgs\Orbit-icon.png" />-->
                     <md-button ng-if="service.enableBuyItNow" ng-click="buyItNow()" class="md-primary md-raised hire-button">
                         Buy it now
                     </md-button>

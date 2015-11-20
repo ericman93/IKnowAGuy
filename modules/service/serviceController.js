@@ -10,9 +10,9 @@ angular.module('iKnowAGuyApp.service')
             $scope.service = {};
             $scope.currentBid = {};
 
-            $scope.service.maxPrice = "--";
-            $scope.service.buyItNowPrice = "--";
-            $scope.currentBid = "--";
+            //$scope.service.maxPrice = "--";
+            //$scope.service.buyItNowPrice = "--";
+            //$scope.currentBid = "--";
 
             function initServiceData() {
                 servicesService.getById($stateParams.id)
@@ -76,7 +76,7 @@ angular.module('iKnowAGuyApp.service')
                         maxBid = bid;
                 }
 
-                return maxBid == null ? "-" : maxBid.amount;
+                return maxBid == null ? "--" : maxBid.amount;
 
             }
 
