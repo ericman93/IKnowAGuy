@@ -86,5 +86,7 @@ service {
   width: 50%; }
   #create-service md-dialog-content {
     width: 100%; }
+    #create-service md-dialog-content md-input-container {
+      width: 100%; }
 
 /*# sourceMappingURL=site.css.map */
